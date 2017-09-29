@@ -3,7 +3,7 @@ var router = express.Router();
 const Schema = require('../db/schema.js');
 const UserModel = Schema.UserModel;
 
-/* USERS */
+/* INDEX */
 router.get('/', (request, response) =>{
   //find all users
   UserModel.find({})
@@ -17,10 +17,12 @@ router.get('/', (request, response) =>{
     console.log(error)
   })
 })
-
+//NEW//
 router.get('/new', (request, response) =>{
   response.render('users/new')
 })
+
+
 
 //CREATE
 
@@ -49,5 +51,8 @@ router.get('/userId/edit', (request, response) => {
 
     })
 })
+
+//DELETE
+
 
 module.exports = router;
