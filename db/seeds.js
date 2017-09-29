@@ -21,9 +21,21 @@ db.once('open', function () {
 // Pull in Models from the `schema.js`
 var Schema = require("./schema.js");
 
+
+
 var UserModel = Schema.UserModel;
 var RecipeModel = Schema.RecipeModel;
 var IngredientModel = Schema.IngredientModel;
+
+UserModel.remove({}, function (err) {
+    console.log(err);
+});
+RecipeModel.remove({}, function (err) {
+    console.log(err);
+});
+IngredientModel.remove({}, function (err) {
+    console.log(err);
+});
 
 // Create some Users, Recipes, and Ingredients
 const Liz = new UserModel({ name: 'Liz Lemon', email: '123@Gmail.com' })

@@ -7,21 +7,40 @@ const UserModel = Schema.UserModel;
 router.get('/', (request, response) =>{
   //find all users
   UserModel.find({})
-  .then((users) => {
-    response.render('users/index', {
-      users: users
+    .then((users) => {
+      response.render('users/index', {
+       users: users
 
-    })
+      })
   })
   .catch((error) => {
     console.log(error)
   })
+
+
+
 })
 
 
 //NEW//
 router.get('/new', (request, response) =>{
+  //This will show an empty form for the new user
   response.render('users/new')
+})
+
+
+//CREATE ROUTE
+
+router.post('/', (request, response) => {
+  const newUser = request.body
+    //console.log('kdjfnbefjkgnejkrbg');
+  UserModel.create(newUser)
+    .then((user) => {
+        response.redirect(`/users/${user._id}` )
+    })
+    .catch((error) => {
+      console.log(error)
+    })
 })
 
 //EDIT
@@ -42,23 +61,6 @@ router.get('/:userId/edit', (request, response) => {
 })
 
 
-
-//CREATE
-
-router.post('/', (request, response) =>{
-  const newUser = request.body
-
-  UserModel.create(newUser)
-    .then(() => {
-        response.redirect('/users')
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-})
-
-
-
 // UPDATE route
 router.put('/:userId', (request, response) => {
   
@@ -75,7 +77,7 @@ router.put('/:userId', (request, response) => {
           .then(() => {
               // THEN once the new user info has been saved,
               // redirect to that user's SHOW page
-              response.redirect(`/users/${userId}`)
+              response.redirect('')
           })
           .catch((error) => {
               console.log(error)
