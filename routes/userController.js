@@ -77,7 +77,8 @@ router.put('/:userId', (request, response) => {
           .then(() => {
               // THEN once the new user info has been saved,
               // redirect to that user's SHOW page
-              response.redirect('')
+              response.redirect(`/users/${{userId}}`)
+              console.log('update')
           })
           .catch((error) => {
               console.log(error)
