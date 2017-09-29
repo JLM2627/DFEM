@@ -36,12 +36,15 @@ router.post('/', (request, response) => {
     //console.log('kdjfnbefjkgnejkrbg');
   UserModel.create(newUser)
     .then((user) => {
+       // response.redirect('/users')
         response.redirect(`/users/${user._id}` )
     })
     .catch((error) => {
       console.log(error)
     })
+
 })
+
 
 //EDIT
 router.get('/:userId/edit', (request, response) => {
@@ -77,7 +80,7 @@ router.put('/:userId', (request, response) => {
           .then(() => {
               // THEN once the new user info has been saved,
               // redirect to that user's SHOW page
-              response.redirect(`/users/${{userId}}`)
+              response.redirect(`/users/${userId}`)
               console.log('update')
           })
           .catch((error) => {
@@ -121,7 +124,7 @@ router.get('/:userId/delete', (request, response) => {
           .then(() => {
               // THEN once the new user info has been saved,
               // redirect to that user's SHOW page
-              response.redirect(`/user/${userId}`)
+              response.redirect('users/index')
           })
           .catch((error) => {
               console.log(error)
