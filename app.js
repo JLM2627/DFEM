@@ -8,6 +8,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+const methodOverride = require('method-override');
+
 var indexController = require('./routes/indexController');
 var userController = require('./routes/userController');
 var recipeController = require('./routes/recipeController');
