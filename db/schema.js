@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
    
  const IngredientSchema = new Schema({
     name: String,
-    amount: String
+   amount: String
 
 });
 
@@ -31,14 +31,9 @@ const UserSchema = new Schema({
 
     },
     recipe:[RecipeSchema]
- })
-  //  const IngedientSchema = new Schema({
-    //    name: String,
-      //  amount: String
+ });
 
-//});
-
-// Create models for each schema
+   // Create models for each schema
 const UserModel = mongoose.model('User', UserSchema)
 const RecipeModel = mongoose.model('Recipe', RecipeSchema)
 const IngredientModel = mongoose.model('Ingredient', IngredientSchema)

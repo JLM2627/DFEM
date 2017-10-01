@@ -28,9 +28,6 @@ db.once('open', () => {
 
 var app = express();
 
-// require mongoose
-var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
