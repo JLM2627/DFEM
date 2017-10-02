@@ -20,18 +20,19 @@ const mongoose = require('mongoose');
 const HappyRecipeSchema = new Schema ({
     mood: String,
     name: String,
-    directions: String,
-   ingredients: String
+   ingredients: String,
+   directions: String
 
 })
 
-//const AngryRecipeSchema = new Schema ({
-  //  mood: String,
-    //name: String,
-    //directions: String,
-  //  ingredient:[IngredientSchema]
+const AngryRecipeSchema = new Schema ({
+    mood: String,
+    name: String,
+    ingredients: String,
+    directions: String,
+  
 
-//})
+})
 
 
 
@@ -54,7 +55,7 @@ const UserModel = mongoose.model('User', UserSchema)
 //const RecipeModel = mongoose.model('Recipe', RecipeSchema)
 //const IngredientModel = mongoose.model('Ingredient', IngredientSchema)
 const HappyModel = mongoose.model('Happ', HappyRecipeSchema)
-//const AngryModel = mongoose.model('Anger', AngryRecipeSchema)
+const AngryModel = mongoose.model('Anger', AngryRecipeSchema)
 
 // Export each model so they can be required elsewhere
 module.exports = {
@@ -62,7 +63,7 @@ module.exports = {
    // RecipeModel: RecipeModel,
    // IngredientModel: IngredientModel,
     HappyModel: HappyModel,
-   // AngryModel: AngryModel
+   AngryModel: AngryModel
 }
 
 

@@ -55,10 +55,10 @@ router.post('/', (request, response) => {
 // SHOW route
 router.get('/:angryId', (request, response) => {
   const angryId = request.params.angryId
-  angryModel.findById(angryId)
-      .then((anger) => {
+  AngryModel.findById(angryId)
+      .then((angry) => {
           response.render('angryRecipes/show', {
-              anger: anger
+              angry: angry
           })
       })
       .catch((error) => {

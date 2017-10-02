@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const Schema = require("../db/schema.js");
-
 const HappyModel = Schema.HappyModel;
+
 // INDEX route
 router.get('/', (request, response) => {
     // FIND all of the companies in the database

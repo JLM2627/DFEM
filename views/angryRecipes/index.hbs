@@ -1,21 +1,22 @@
-<table>
+{{!-- <table>
     <tr>
-       <th>First Name</th>
-       <th>Last Name</th>
-       <th>Orders</th>
-    </tr>
- {{#each users}}
+       <th>Fill</th>
+       <th>Fill</th>
+       <th>Fill</th>
+    </tr> --}}
+ {{#each anger}}                                            
         
        <tr>
-              <td> <a href="/angry/{{this._id}}">{{this.first}}</a></td>
-              <td> <a href="/angry/{{this._id}}">{{this.last}}</a></td>
-              <td><a href="/angry/{{this._id}}">Orders</a></td>
+              <td> <a href="/angry/{{this._id}}">{{this.name}}</a></td>
+              {{!-- <td> <a href="/happy/{{this._id}}">{{this.directions}}</a></td>
+              <td><a href="/happy/{{this._id}}">{{this.ingredients}}</a></td> --}}
         </tr>
 
    {{/each}}
-    <tr>
+  {{!--   <tr>
         <td></td>
-        <td><form action="Users/angry/"><input type="submit" value="Create User" /></form></td>
+        <td><form action="/happyRecipes/new"><input type="submit" value="New Recipe" /></form></td>
         <td></td>
     </tr>
-</table>
+</table> --}}
+    
