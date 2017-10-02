@@ -16,6 +16,13 @@ const mongoose = require('mongoose');
        // ingredient:[IngredientSchema]
 
 //})
+const SadRecipeSchema = new Schema ({
+    mood: String,
+    name: String,
+   ingredients: String,
+   directions: String
+
+})
 
 const HappyRecipeSchema = new Schema ({
     mood: String,
@@ -56,6 +63,7 @@ const UserModel = mongoose.model('User', UserSchema)
 //const IngredientModel = mongoose.model('Ingredient', IngredientSchema)
 const HappyModel = mongoose.model('Happ', HappyRecipeSchema)
 const AngryModel = mongoose.model('Anger', AngryRecipeSchema)
+const SadModel = mongoose.model('sad', SadRecipeSchema )
 
 // Export each model so they can be required elsewhere
 module.exports = {
@@ -63,7 +71,8 @@ module.exports = {
    // RecipeModel: RecipeModel,
    // IngredientModel: IngredientModel,
     HappyModel: HappyModel,
-   AngryModel: AngryModel
+   AngryModel: AngryModel,
+   SadModel: SadModel
 }
 
 

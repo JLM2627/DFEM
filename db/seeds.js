@@ -26,6 +26,7 @@ var Schema = require("./schema.js");
 var UserModel = Schema.UserModel;
 var HappyModel = Schema.HappyModel;
 var AngryModel = Schema.AngryModel;
+var SadModel = Schema.SadModel;
 
 
 
@@ -43,6 +44,10 @@ AngryModel.remove({}, function (err) {
     console.log(err);
 });
 
+SadModel.remove({}, function (err) {
+    console.log(err);
+});
+
 // Create some Users, Recipes, and Ingredients
 const Liz = new UserModel({ name: 'Liz Lemon', email: '123@Gmail.com' })
 const Reign = new UserModel({ name: 'Reign Sucks', email: '456@gmail.com' })
@@ -57,10 +62,28 @@ const ChocolateTorte = new HappyModel({ mood: 'happy', name: 'Chocolate Torte', 
 
 // Create some Angry recipes
 const SaltedChocolate = new AngryModel({ mood: 'angry', name: 'Salted chocolate and Pretzel Bars', ingredients: '12 ounces good quality semi-sweet chocolate chips ,divided (I like Ghiardelli best for melting). 8 ounces mini pretzel twists ,half of a regular 16-ounce bag. 11 ounce bag Kraft Caramel Bits or homemade caramel. Sea salt for sprinkling', directions: 'Line a large, rimmed baking sheet with parchment paper. Melt 8 ounces of the chocolate chips gently in the microwave (on low heat, stirring every 15 seconds) until smooth. Spread the chocolate evenly over the parchment. Immediately add the pretzel twists over the top and gently press them into the chocolate.  Add caramel bits to a microwave safe bowl with 2 tablespoons water and melt according to package instructions (on high for 2 minutes). Stir well and drizzle the melted caramel over the top of all of the pretzels. Melt remaining 4 ounces of chocolate and drizzle over the caramel. Sprinkle with sea salt. Refrigerate until hardened. Cut or tear into pieces, Enjoy!' })
+const NutellaSouffle = new AngryModel({ mood: 'angry', name: 'Nutella Souffle', ingredients:'1/2 cup Nutella, 2 eggs, 1 tsp. sugar, unsalted butter, cocoa powder', directions:'Preheat the oven to 375˚F / 190˚C. Butter two Soufflé ramekins and sprinkle with cocoa powder, knocking out excess. In a medium bowl, mix Nutella and two egg yolks. In a separate medium bowl, whisk two egg whites until foam starts to form. Add sugar and continue mixing until they hold stiff peaks. Fold 1/3 of the whites into the Nutella mixture until fully incorporated. Add the remaining whites to the mixture and fold gently, but thoroughly until the mixture is smooth. Pour the mixture in the ramekins, clean the rims so the Soufflé rises evenly, and bake for 15 - 17 minutes. Serve immediately.' })
+
+// Create some sad recipes
+const SadRecipe = new SadModel({ mood:'sad', name:'sad recipe', ingredients:'sad ingredients', directions:'sad directions'})
+
 
 const users = [Liz, Reign, jQuery]
 const happyRecipes = [ChocolateMouse, ChocolateCookies, Fudge, ChocolateTorte]
-const angryRecipes = [SaltedChocolate]
+const angryRecipes = [SaltedChocolate, NutellaSouffle]
+const sadRecipes = [SadRecipe]
+
+sadRecipes.forEach((sadRecipe) => {
+    // user.recipe = recipe
+    sadRecipe.save()
+    .then((sadRecipe)=> {
+        //console.log(happyRecipe);
+        console.log(`${sadRecipe.name} saved!`)
+    })
+    .catch((error) =>{
+        console.log(error)
+    })
+})
 
 angryRecipes.forEach((angryRecipe) => {
     // user.recipe = recipe

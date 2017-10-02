@@ -16,6 +16,7 @@ var recipeController = require('./routes/recipeController');
 var ingredientController = require('./routes/ingredientController');
 var happyController = require('./routes/happyController');
 var angryController = require('./routes/angryController');
+var sadController = require('./routes/sadController');
 
 // Database Set-up
 mongoose.Promise = global.Promise
@@ -48,6 +49,7 @@ app.use('/', indexController);
 app.use('/users', userController);
 app.use('/happy', happyController);
 app.use('/angry', angryController);
+app.use('/sad', sadController);
 //app.use('/recipes', recipeController);
 //app.use('/ingredients', ingredientController);
 // catch 404 and forward to error handler
