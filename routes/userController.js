@@ -124,7 +124,7 @@ router.get('/:userId/delete', (request, response) => {
           .then(() => {
               // THEN once the new user info has been saved,
               // redirect to that user's SHOW page
-              response.redirect('users/index')
+              response.redirect('/users')
           })
           .catch((error) => {
               console.log(error)

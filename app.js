@@ -14,6 +14,9 @@ var indexController = require('./routes/indexController');
 var userController = require('./routes/userController');
 var recipeController = require('./routes/recipeController');
 var ingredientController = require('./routes/ingredientController');
+var happyController = require('./routes/happyController');
+var angryController = require('./routes/angryController');
+
 // Database Set-up
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});
@@ -43,6 +46,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexController);
 app.use('/users', userController);
+app.use('/happy', happyController);
+app.use('/angry', angryController);
 //app.use('/recipes', recipeController);
 //app.use('/ingredients', ingredientController);
 // catch 404 and forward to error handler

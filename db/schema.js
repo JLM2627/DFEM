@@ -3,19 +3,35 @@ const mongoose = require('mongoose');
 
 
    
- const IngredientSchema = new Schema({
+// const IngredientSchema = new Schema({
+  //  name: String,
+  // amount: String
+
+//});
+
+  //  const RecipeSchema = new Schema ({
+    //    mood: String,
+      //  name: String,
+        //directions: String,
+       // ingredient:[IngredientSchema]
+
+//})
+
+const HappyRecipeSchema = new Schema ({
+    mood: String,
     name: String,
-   amount: String
-
-});
-
-    const RecipeSchema = new Schema ({
-        mood: String,
-        name: String,
-        directions: String,
-        ingredient:[IngredientSchema]
+    directions: String,
+   ingredients: String
 
 })
+
+//const AngryRecipeSchema = new Schema ({
+  //  mood: String,
+    //name: String,
+    //directions: String,
+  //  ingredient:[IngredientSchema]
+
+//})
 
 
 
@@ -30,19 +46,23 @@ const UserSchema = new Schema({
         required: true
 
     },
-    recipe:[RecipeSchema]
+    //recipe:[RecipeSchema]
  });
 
    // Create models for each schema
 const UserModel = mongoose.model('User', UserSchema)
-const RecipeModel = mongoose.model('Recipe', RecipeSchema)
-const IngredientModel = mongoose.model('Ingredient', IngredientSchema)
+//const RecipeModel = mongoose.model('Recipe', RecipeSchema)
+//const IngredientModel = mongoose.model('Ingredient', IngredientSchema)
+const HappyModel = mongoose.model('Happ', HappyRecipeSchema)
+//const AngryModel = mongoose.model('Anger', AngryRecipeSchema)
 
 // Export each model so they can be required elsewhere
 module.exports = {
     UserModel: UserModel,
-    RecipeModel: RecipeModel,
-    IngredientModel: IngredientModel
+   // RecipeModel: RecipeModel,
+   // IngredientModel: IngredientModel,
+    HappyModel: HappyModel,
+   // AngryModel: AngryModel
 }
 
 
