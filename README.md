@@ -24,6 +24,7 @@ While looking at the code, you will see several comments along the flow referenc
 
 ## Contributors
 
+Thanks to General Assembly for help, and also to the code and materials they allow us to reference when building apps. Thanks to the WDI 12 class for assistance and feedback.
 
 https://github.com/JLM2627/DFEM
 
@@ -35,5 +36,5 @@ https://www.lucidchart.com/invitations/accept/877e44aa-4554-4172-bd40-c299700dd0
 
 
 
-## License
+
 
