@@ -1,22 +1,14 @@
-{{!-- <table>
-    <tr>
-       <th>Fill</th>
-       <th>Fill</th>
-       <th>Fill</th>
-    </tr> --}}
+ <div class="jumbotron text-center">
  {{#each anger}}                                            
         
-       <tr>
-              <td> <a href="/angry/{{this._id}}">{{this.name}}</a></td>
-              {{!-- <td> <a href="/happy/{{this._id}}">{{this.directions}}</a></td>
-              <td><a href="/happy/{{this._id}}">{{this.ingredients}}</a></td> --}}
-        </tr>
-
+       
+               <p class="lead">  <a href="/angry/{{this._id}}">{{this.name}}</a>
+             
    {{/each}}
-  {{!--   <tr>
-        <td></td>
-        <td><form action="/happyRecipes/new"><input type="submit" value="New Recipe" /></form></td>
-        <td></td>
-    </tr>
-</table> --}}
-    
+
+</div>
+
+
+
+  
+   
