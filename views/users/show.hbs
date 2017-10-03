@@ -1,20 +1,22 @@
 <div>
-    <h1>{{user.name}}</h1>
-    <div> {{user.email}}</div>
+    <div class="jumbotron text-center">
+             <h1 class="display-3">Hello, {{user.name}}</h1>
+          <div>   <p class="lead">{{user.email}}</div>
+
 
    
     <div>
-        {{!-- <a href="/users">Now Go Get Some Dessert!</a> --}}
+   
+    
+  <div class= "text-center">
+        <a class="btn btn-primary btn-sm" href="/users/{{user._id}}/edit">Edit</a>
+         <a class="btn btn-primary btn-sm" href="/users/{{user._id}}/delete">Delete</a>
     </div>
+      <hr class="my-4">
     <div>
-        <a href="/users/{{user._id}}/edit">Edit</a>
+    <a href="/users">Now Go Get Some Dessert!</a> 
     </div>
-    <div>
-        <a href="/users/{{user._id}}/delete">Delete</a>
-    </div>
-    <div>
-    <a class="btn btn-primary btn-lg" href="/happy" role="button">Happy?</a>
-       <a class="btn btn-primary btn-lg" href="/angry" role="button">Angry?</a>
-        <a class="btn btn-primary btn-lg" href="/sad" role="button">Sad?</a>
-        </div>
+
 </div>
+
+

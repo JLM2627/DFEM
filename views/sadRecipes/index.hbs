@@ -1,21 +1,23 @@
-{{!-- <table>
-    <tr>
-       <th>Fill</th>
-       <th>Fill</th>
-       <th>Fill</th>
-    </tr> --}}  aSCs
+ <div class="jumbotron">
  {{#each sads}}                                            
         
-       <tr>
-              <td> <a href="/sad/{{this._id}}">{{this.name}}</a></td>
-              {{!-- <td> <a href="/happy/{{this._id}}">{{this.directions}}</a></td>
-              <td><a href="/happy/{{this._id}}">{{this.ingredients}}</a></td> --}}
-        </tr>
+    
+               <p class="lead"> <a href="/sad/{{this._id}}">{{this.name}}</a>
+             
+        
 
-   {{/each}}
-  {{!--   <tr>
-        <td></td>
-        <td><form action="/happyRecipes/new"><input type="submit" value="New Recipe" /></form></td>
-        <td></td>
-    </tr>
-</table> --}}
+
+
+{{/each}}
+</div>
+
+
+{{!--   <div class="jumbotron">
+  <h1 class="display-3">Hey you, feeling blue?</h1>
+  <p class="lead">Here are some dank recipes guaranteed to improve your mood .</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div> --}}
